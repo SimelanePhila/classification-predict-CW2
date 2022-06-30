@@ -499,7 +499,7 @@ def main():
 				else:
 				    graph_model_improvement(best_performing_df, clf_performance_df, column)
 			
-			elif method == methods[2]:
+		elif method == methods[2]:
 				metrics000 = [' ', 'F1-Accuracy', 'F1-Macro', 'F1-Weighted', 'Execution Time', 'CV_Mean', 'CV_Std']	
 				column = st.selectbox('3. Select an evaluation metric:',
 						     metrics[4:])
@@ -517,8 +517,8 @@ def main():
 				
 				else:
 				    graph_model_performances(metrics_new_data_split_df, column)
-			
-			elif method == methods[2]:
+
+		elif method == methods[2]:
 				st.write('Comapring the models to the flair text classifier neural network by means of cross validation \
 				is too computationally expensive and therefore only a train test split was carried out.')
 				
@@ -536,7 +536,7 @@ def main():
 		PRO = st.sidebar.checkbox('Pro')
 		NEWS = st.sidebar.checkbox('News')
 		st.sidebar.markdown('Select info:')
-		wordcloud = st.sidebar.checkbox('Wordclouds')
+
 		hashtags = st.sidebar.checkbox('Hashtags')
 		mentions = st.sidebar.checkbox('Mentions')
 		message_len = st.sidebar.checkbox('Message length')
@@ -549,9 +549,6 @@ def main():
 			st.write('+ 8530 tweets were labled Pro')
 		if NEWS:
 			st.write('+ 3640 tweets were labled News')
-		if wordcloud: 
-			st.title('Wordcloud')
-			n = st.slider('Max Words',15, 60, 30, 15)
 			if ANTI:
 				st.subheader('Most Popular Words For Anti Tweets')
 				create_wordcloud(tweet_list[3], n)
